@@ -1,0 +1,79 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: Syncthing updated to v1.28.1
+    - kind: changed
+      description: kube-rbac-proxy image configurable in helm chart values
+    - kind: changed
+      description: mover scripts updated to use sync -f to only sync the target filesystem at the end of mover tasks
+    - kind: changed
+      description: Updates the ensure_initialized function in the restic mover script to follow restic recommendations
+    - kind: fixed
+      description: All movers should return error if not able to EnsurePVCFromSrc
+    - kind: security
+      description: kube-rbac-proxy upgraded to 0.18.1
+  artifacthub.io/crds: |
+    - kind: ReplicationDestination
+      version: v1alpha1
+      name: replicationdestination.volsync.backube
+      displayName: Replication destination
+      description: Defines the destination of a replicated volume
+    - kind: ReplicationSource
+      version: v1alpha1
+      name: replicationsource.volsync.backube
+      displayName: Replication source
+      description: Defines the source of a replicated volume
+  artifacthub.io/license: AGPL-3.0-or-later
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 2C937ADACD4BEF921197F66EDC7556B1903A252B
+    url: https://keys.openpgp.org/vks/v1/by-fingerprint/2C937ADACD4BEF921197F66EDC7556B1903A252B
+apiVersion: v2
+appVersion: 0.12.0-rc.1
+description: Asynchronous data replication for Kubernetes
+home: https://volsync.readthedocs.io/
+icon: https://raw.githubusercontent.com/backube/volsync/main/docs/media/volsync.svg?sanitize=true
+keywords:
+- - backup
+- - csi
+- - data
+- - disaster recovery
+- - replication
+- - storage
+kubeVersion: ^1.20.0-0
+maintainers:
+- - email: jstrunk@redhat.com
+  name: John Strunk
+  url: https://github.com/JohnStrunk
+- - email: tflower@redhat.com
+  name: Tesshu Flower
+  url: https://github.com/tesshuflower
+name: volsync
+sources:
+- - https://github.com/backube/volsync
+type: application
+version: 0.12.0-rc.1
+
+...
+files:
+  volsync-0.12.0-rc.1.tgz: sha256:2e65ef82b8be50c892a006f024dc19b4fdb285920eeae232779f2a3bf29b9463
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEELJN62s1L75IRl/Zu3HVWsZA6JSsFAmdluPUACgkQ3HVWsZA6
+JSvtYA/+ISVCbRoPewhGHIqE3NhojgP2Ii8Wb7wCPY5Dwn9Mx2wZjJHmwLR9nuvE
+mkb2faVIv3e2qkz0fFaUwtHvhefPMWIL0VkKHC5CiHIm9vMfIoBor+1nspwON2Hu
+dfMXTcjktQmqcViURWQntP+ay72DC3iYuzC6dF7lE1dUVHxOuAryBez6G0v6G/4S
+OPiIKcFSIYGvGoX87FbahEftu+XfF8VRuljSOjIOVH7Ym51+Sx7WyBP9DRFB/jXM
+B62xzrO7yk6DbheR6IaiamCZ8UDIiogIBeDUE45yHkOPcmOioewurBuRUvOx5PXp
+ZJCq+cPd+tTEVYo4zQycWCdUTw++gCbO5fx9aac+Lo/rSLzOlxsA7qpOsUeJHpkV
+cW1rjhdFrsZXnypYQvNwpULB9pH/xhCnatDAvkdT0v7IFibej29MTtQ6Un5cwvk7
+KBz56HsbUpE8VJGlea7/H0BVoT71urjHb1UDo/BEDzMNQnlaH8H0lX1cnnZyGT22
+OiplQ6+QAxKKLo5D0xoDYIIG7ctOYICfTZp/D5CwSGMjVn6nyjZxSqwR50BHe1IN
+PfdzwBSg+hgHDjLP4FyGBv9liscxBe364tCL/pYbF7L6ns12ANNUyHOig5jEvhsa
+wqnWWxyA8bHNKA4NwMTik5padddt59NPi4uFH3lSvvAjqpWgQ+8=
+=Fl5e
+-----END PGP SIGNATURE-----
