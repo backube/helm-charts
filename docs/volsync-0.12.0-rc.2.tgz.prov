@@ -1,0 +1,85 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: imagePullSecrets in helm charts will be copied from volsync controller namespace to the mover namespace so mover jobs can use them
+    - kind: changed
+      description: Updated release to build on golang 1.23
+    - kind: changed
+      description: Syncthing updated to v1.29.2
+    - kind: changed
+      description: kube-rbac-proxy image configurable in helm chart values
+    - kind: changed
+      description: mover scripts updated to use sync -f to only sync the target filesystem at the end of mover tasks
+    - kind: changed
+      description: Updates the ensure_initialized function in the restic mover script to follow restic recommendations
+    - kind: fixed
+      description: All movers should return error if not able to EnsurePVCFromSrc
+    - kind: fixed
+      description: Fix for mover job/service name length too long (>63 chars) if the replicationsource or replicationdestination CR name is too long
+    - kind: security
+      description: kube-rbac-proxy upgraded to 0.18.2
+  artifacthub.io/crds: |
+    - kind: ReplicationDestination
+      version: v1alpha1
+      name: replicationdestination.volsync.backube
+      displayName: Replication destination
+      description: Defines the destination of a replicated volume
+    - kind: ReplicationSource
+      version: v1alpha1
+      name: replicationsource.volsync.backube
+      displayName: Replication source
+      description: Defines the source of a replicated volume
+  artifacthub.io/license: AGPL-3.0-or-later
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 2C937ADACD4BEF921197F66EDC7556B1903A252B
+    url: https://keys.openpgp.org/vks/v1/by-fingerprint/2C937ADACD4BEF921197F66EDC7556B1903A252B
+apiVersion: v2
+appVersion: 0.12.0-rc.2
+description: Asynchronous data replication for Kubernetes
+home: https://volsync.readthedocs.io/
+icon: https://raw.githubusercontent.com/backube/volsync/main/docs/media/volsync.svg?sanitize=true
+keywords:
+- - backup
+- - csi
+- - data
+- - disaster recovery
+- - replication
+- - storage
+kubeVersion: ^1.20.0-0
+maintainers:
+- - email: jstrunk@redhat.com
+  name: John Strunk
+  url: https://github.com/JohnStrunk
+- - email: tflower@redhat.com
+  name: Tesshu Flower
+  url: https://github.com/tesshuflower
+name: volsync
+sources:
+- - https://github.com/backube/volsync
+type: application
+version: 0.12.0-rc.2
+
+...
+files:
+  volsync-0.12.0-rc.2.tgz: sha256:91502b886066fa7099842b3e80b8653e177bfe3b18bca23c325a3ba811a722ff
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEELJN62s1L75IRl/Zu3HVWsZA6JSsFAmej0tAACgkQ3HVWsZA6
+JSsNOA/8CzPv++NAQ+2ozVZPXv09zZGOU97hydjRtfs/7lVII3XSa9VSOciNCKjA
+GydIQ42u44kiKxmMkczvWDwGjGUaroTXGphMy69Q+Kdxkyj4mK5gMt+VJplK9RTY
+FtYlNT6vfud8B0/udrtt1JsbAGJi0T/IpO8/nuzotU8O0UY6tLqXGsK9Pr0nHenV
+3oMJ/j51qzOd7ougke+Y5enL32o8KubTIG/3ywCFyM2UiepsyVAFZlrVT6WIdAwG
+EywB8UEsQLPBQA2UEhWBbN/AGoLMp/h3I/n7N1TnvTAh/X6PBqVVlHlUfJJh2uSw
+i7276+8gB7XynR4SCi/oh4yWHKLlwDXaBHoztTPUMmaelHm+z88iS6L1MqDJ4yJp
+R9Cz9uwZkjonxEqULOQw8hBnNUZviXbp0k+NatUYkkbd1ArjPVpOJQFGKYisZPz1
+G1mYGGl4vvXFJ/8AjeITLlJC8mojssAjdFCcqg1bmXxCvLRSygORvE1g1V6ayj8S
+d4fC5BG1f2rF4XdDxCMUilc2FJbsqSPHfC/sp/AqbFQspjqMtr0aiBT8AVCG4fJD
+khQyuKBnIBJ86eBULFEu5xjqGqzh2x9rh0sNgR4QHThvE1LbkDUPHc7zM1xkhjFj
+rCph4GZlvRZ3XQo26E22gaDmzeaORRzyl6ngY2+BAWrLAvSQ3Zw=
+=z6Mi
+-----END PGP SIGNATURE-----
