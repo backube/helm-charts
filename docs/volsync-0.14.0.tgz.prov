@@ -1,0 +1,77 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: Updated release to build on golang 1.24
+    - kind: changed
+      description: Syncthing updated to v1.30.0
+    - kind: changed
+      description: Rclone updated to v1.71.2
+    - kind: added
+      description: Rclone --checksum, --transfers and --stats parameters can now be overridden by RCLONE_ env vars in the rclone config secret
+    - kind: added
+      description: addition of moverVolumes for advanced users to allow mounting of secrets or PVCs to their mover pod
+  artifacthub.io/crds: |
+    - kind: ReplicationDestination
+      version: v1alpha1
+      name: replicationdestination.volsync.backube
+      displayName: Replication destination
+      description: Defines the destination of a replicated volume
+    - kind: ReplicationSource
+      version: v1alpha1
+      name: replicationsource.volsync.backube
+      displayName: Replication source
+      description: Defines the source of a replicated volume
+  artifacthub.io/license: AGPL-3.0-or-later
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 2C937ADACD4BEF921197F66EDC7556B1903A252B
+    url: https://keys.openpgp.org/vks/v1/by-fingerprint/2C937ADACD4BEF921197F66EDC7556B1903A252B
+apiVersion: v2
+appVersion: 0.14.0
+description: Asynchronous data replication for Kubernetes
+home: https://volsync.readthedocs.io/
+icon: https://raw.githubusercontent.com/backube/volsync/main/docs/media/volsync.svg?sanitize=true
+keywords:
+- - backup
+- - csi
+- - data
+- - disaster recovery
+- - replication
+- - storage
+kubeVersion: ^1.20.0-0
+maintainers:
+- - email: jstrunk@redhat.com
+  name: John Strunk
+  url: https://github.com/JohnStrunk
+- - email: tflower@redhat.com
+  name: Tesshu Flower
+  url: https://github.com/tesshuflower
+name: volsync
+sources:
+- - https://github.com/backube/volsync
+type: application
+version: 0.14.0
+
+...
+files:
+  volsync-0.14.0.tgz: sha256:df37cc2d48233e6ff1a8026073c0186c6ac25f0b8a1411894937aafa9019a476
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEELJN62s1L75IRl/Zu3HVWsZA6JSsFAmkfdWQACgkQ3HVWsZA6
+JSvZHg//cIL1BhPW10cNAN78xeEm7OdIUK5Pk4pHoHBE78vmz5UZPJhiz0rvhniZ
+FSOpCHauwCRIKEp0sNjZy4FPFcJ5ud0XyVBeesNDCyPcknExTFTeAkbw1jws/bhS
+6NtQyydpriBGJodYMgXqL0Q8BMS7JUocV/urnAEoiUFZ6rqWeL7ZuBqWxHYwhmC/
+s77b80apCJS9sdcWCTRaLiuxabugVGCuTwXKawyU/D0N8r++to1eBMRD8b25sRHZ
+oXxDtRRiWPGOVHmgRqjaMRLcitF3EwDQEblc5/6K3n0kR+8rWSn438gwktMhSvgi
+L1FrRf6nK8ozuyQZqNPRKDSGq7UTxZBD6q97Ft1669gNABRp55qJHN7yQ6D5OEET
++XxQ+dh0jqLwQR3/qRNegbGSOyi6QQxtf8iy5PCHj651LWWoppWNaigDtIJwGl1i
+grqbQQE8eFcFCSFwKJisCzeRAWL7G+2ce6Osew6FWGrmQrkUytyxeD1fvZQl34m+
+8KpyEuQ/lle075IM9a6W4Nipzv1UfCtRQsDRMATxH1wWcI5Y9UN9iSS8xTJ9Wk0P
+xYESZD6/O12RlrSN2RzWPhrMgQo6j3w/koxay5uC2FSULVf+6Qo7dlpRJYlZ6ILu
+L4+nF6N3AnnR8JNnubiwjOvwvWj/SPXoE4STAfUYdTdqTsNVR68=
+=NSiR
+-----END PGP SIGNATURE-----
