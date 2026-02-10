@@ -1,0 +1,75 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: moverVolumes updated to allow NFS type volumeMounts
+    - kind: changed
+      description: Rclone updated to v1.73.0
+    - kind: changed
+      description: kube-rbac-proxy container no longer used. Built in auth for metrics provided by controller-runtime
+    - kind: fixed
+      description: Exclude lost+found for Rclone
+  artifacthub.io/crds: |
+    - kind: ReplicationDestination
+      version: v1alpha1
+      name: replicationdestination.volsync.backube
+      displayName: Replication destination
+      description: Defines the destination of a replicated volume
+    - kind: ReplicationSource
+      version: v1alpha1
+      name: replicationsource.volsync.backube
+      displayName: Replication source
+      description: Defines the source of a replicated volume
+  artifacthub.io/license: AGPL-3.0-or-later
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 2C937ADACD4BEF921197F66EDC7556B1903A252B
+    url: https://keys.openpgp.org/vks/v1/by-fingerprint/2C937ADACD4BEF921197F66EDC7556B1903A252B
+apiVersion: v2
+appVersion: 0.15.0-rc.1
+description: Asynchronous data replication for Kubernetes
+home: https://volsync.readthedocs.io/
+icon: https://raw.githubusercontent.com/backube/volsync/main/docs/media/volsync.svg?sanitize=true
+keywords:
+- - backup
+- - csi
+- - data
+- - disaster recovery
+- - replication
+- - storage
+kubeVersion: ^1.20.0-0
+maintainers:
+- - email: jstrunk@redhat.com
+  name: John Strunk
+  url: https://github.com/JohnStrunk
+- - email: tflower@redhat.com
+  name: Tesshu Flower
+  url: https://github.com/tesshuflower
+name: volsync
+sources:
+- - https://github.com/backube/volsync
+type: application
+version: 0.15.0-rc.1
+
+...
+files:
+  volsync-0.15.0-rc.1.tgz: sha256:6eb86a772c28c69a87d36fdde3dfdbf8299e89531b18c8c815f9689b0677e560
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEELJN62s1L75IRl/Zu3HVWsZA6JSsFAmmLdw0ACgkQ3HVWsZA6
+JSvY8w/9H7oZeZY1FN7yuRcwOSF8JmIfzi7Cct/tFiA4uQA8ZgLVEnHcfktaVBGx
+s6yOd7hXmZhZz/VcLZZHBiReBhbjedTQdMfpB8gf38rlgjbs8cc+D7OEknz8gxfb
+i2AEkpAr5GGpooSEBFS2fzwFWWD13SWoM43/+HpKdaFG7e3LcM9hu/CGiyRsYPwi
+bikXpZaeGHpyabFTTO5bRp/t39hmJjBrYQDHDwM80jirFus+0V/lz33J4bJPKGAY
+I6wpF3mvPEYtcfG0xDgG94rHoOgewtQZBYjxPtEOglsra37knXi2xqJMYPzILv/7
+Bm0eTi18BWZ6Y2Ks9uhMvwQn1wr7I34kWv6fBxodsqT74s4PGRMITe0LLpah6jnJ
+wAoTeI9E+ldbeaIkvYDxzCibRMJcnJVLXMHvHPvPjWCFWUYPXcYaDl3XeimaLUV1
+2KYQ6dgCg3FLyR2U/rmHF+3fPtZp4H30j+ZjRi/RqoWxelG4STHdasXahBHRwtjk
+/jndFYSsQ+58BMPKTGqi2/YotBqjAndohqCk0jT3qDX0rxd7Hoa2/STa5bndSG2+
+or1XkQyIz6WfCC4OywA/3TFlomZeTIqaZEhtJqzey7QcB6YSdMPYoJ/VTXJ/JDJb
+r8sYX4KaRb+pGqUxMUgZG9sSzxmXgNtdhz+gXyKZVaWAX14Ffkc=
+=gxtJ
+-----END PGP SIGNATURE-----
