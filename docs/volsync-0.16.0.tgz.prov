@@ -1,0 +1,93 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: changed
+      description: Restic updated to v0.18.1
+    - kind: changed
+      description: Rclone updated to v1.74.2
+    - kind: changed
+      description: controller-runtime updated to v0.23.2, migrated to events.EventRecorder
+    - kind: changed
+      description: Krew plugin now released for macOS
+    - kind: changed
+      description: Restic supports Azure workload identity env vars
+    - kind: changed
+      description: Dropped unnecessary perl package from container image, replaced with python3
+    - kind: changed
+      description: Removed unused Syncthing insecureAllowOldTLSVersions option
+    - kind: fixed
+      description: rsync-tls now properly munges/unmunges symlinks during sync
+    - kind: fixed
+      description: Rclone getfacl no longer follows symlinks
+    - kind: security
+      description: rsync-tls enforces TLS 1.3 as minimum version
+    - kind: security
+      description: rsync-tls Prevent stunnel DH param regeneration on every run
+    - kind: security
+      description: rsync-tls sets ciphers per OpenShift TLS profile compliance
+    - kind: security
+      description: Controller metrics endpoint checks central OpenShift TLS profile
+  artifacthub.io/crds: |
+    - kind: ReplicationDestination
+      version: v1alpha1
+      name: replicationdestination.volsync.backube
+      displayName: Replication destination
+      description: Defines the destination of a replicated volume
+    - kind: ReplicationSource
+      version: v1alpha1
+      name: replicationsource.volsync.backube
+      displayName: Replication source
+      description: Defines the source of a replicated volume
+  artifacthub.io/license: AGPL-3.0-or-later
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 2C937ADACD4BEF921197F66EDC7556B1903A252B
+    url: https://keys.openpgp.org/vks/v1/by-fingerprint/2C937ADACD4BEF921197F66EDC7556B1903A252B
+apiVersion: v2
+appVersion: 0.16.0
+description: Asynchronous data replication for Kubernetes
+home: https://volsync.readthedocs.io/
+icon: https://raw.githubusercontent.com/backube/volsync/main/docs/media/volsync.svg?sanitize=true
+keywords:
+- - backup
+- - csi
+- - data
+- - disaster recovery
+- - replication
+- - storage
+kubeVersion: ^1.20.0-0
+maintainers:
+- - email: jstrunk@redhat.com
+  name: John Strunk
+  url: https://github.com/JohnStrunk
+- - email: tflower@redhat.com
+  name: Tesshu Flower
+  url: https://github.com/tesshuflower
+name: volsync
+sources:
+- - https://github.com/backube/volsync
+type: application
+version: 0.16.0
+
+...
+files:
+  volsync-0.16.0.tgz: sha256:1ff9e80beea017c961159ba97f6a9cc9de41b12f6134c6296ae79c894d1a4884
+-----BEGIN PGP SIGNATURE-----
+
+iQIzBAEBCAAdFiEELJN62s1L75IRl/Zu3HVWsZA6JSsFAmopbpEACgkQ3HVWsZA6
+JSuhJBAAmdAod4zDgsxJoqhlhgqqsgGcDA6AijGmZ+RFgz4FBCukhstaq+bVxVfa
+1NxUZMI3D/C+7W6TEcfNnxtU4ezLgyBcVddKGlLDg7RARSMIHJTZXs5I+69+DPvy
+hh4DpLRp5QY0aO4NgxSg2JmkVTGX7rktNTk8VWdoT+js7Ma4LUHVPzJxeymOZeqU
+pJm2p3pbk/orbLZdHEnjFlkBv2bjN6NqcISV3ErYAGgQMhtezCeP+c86PmXib+PI
+8uRhcBX0odIgzig9VGzyJzMrYRDTPPeZPPh9wTA1xxa0A2NGdltwuPNeD9mt4rYn
+WAD7EC7i+GTwDlAbwc8+H3R60lySD8wIyxYJAQI2A/8kLz9Z21l/jz8PCF3SBNLM
+MdZrvwKCJ4QOP+QCbDkJXjVJmmtkcaVzYT1RJrB9BZuShtdjHKov+Y300+8Wveph
+J9iIZUN/uupvjRVvXnxYp6LkSFPXZhlscRdhd49HRFzvqdxtk1arov/ctGgzPdut
+gzjssNgjZYe/lThmFkxHN1W1c2WPx+7sHCTZRIQiLLo0CgJl5unj5FhrVmYkCCjH
+U0ZofSlvWUx7cq6Sfz5QQBq99Ss6BomdEzVvtTY1n0L4XPnAQjAx6qr55NVdr5Dt
+dRErp58wNPZyvCmQtbcXhuhd18FJn+wu4npliD768xYJpK7q2qc=
+=DDB+
+-----END PGP SIGNATURE-----
