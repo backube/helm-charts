@@ -1,0 +1,84 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA256
+
+annotations:
+  artifacthub.io/changes: |
+    - kind: added
+      description: Chart now allows to set `priorityClassName` for the operator pod
+    - kind: added
+      description: Add MoverTolerations to MoverConfig
+    - kind: added
+      description: Restic support `--keep-within-*` retention flags
+    - kind: added
+      description: Add spec.restic.enableSparseRestore to restore files sparse
+    - kind: changed
+      description: Restic updated to v0.19.1
+    - kind: changed
+      description: Rclone updated to v1.75.2
+    - kind: changed
+      description: The Rsync-ssh mover now requires privileged mode to run. Previously for backwards compatibility it forced privileged mode. Note: Rsync-TLS is still the recommended mover for Rsync.
+    - kind: fixed
+      description: Restic optional env vars - only set in job if key exists in secret
+  artifacthub.io/crds: |
+    - kind: ReplicationDestination
+      version: v1alpha1
+      name: replicationdestination.volsync.backube
+      displayName: Replication destination
+      description: Defines the destination of a replicated volume
+    - kind: ReplicationSource
+      version: v1alpha1
+      name: replicationsource.volsync.backube
+      displayName: Replication source
+      description: Defines the source of a replicated volume
+  artifacthub.io/license: AGPL-3.0-or-later
+  artifacthub.io/operator: "true"
+  artifacthub.io/operatorCapabilities: Basic Install
+  artifacthub.io/signKey: |
+    fingerprint: 2C937ADACD4BEF921197F66EDC7556B1903A252B
+    url: https://keys.openpgp.org/vks/v1/by-fingerprint/2C937ADACD4BEF921197F66EDC7556B1903A252B
+apiVersion: v2
+appVersion: 0.17.0
+description: Asynchronous data replication for Kubernetes
+home: https://volsync.readthedocs.io/
+icon: https://raw.githubusercontent.com/backube/volsync/main/docs/media/volsync.svg?sanitize=true
+keywords:
+- - backup
+- - csi
+- - data
+- - disaster recovery
+- - replication
+- - storage
+kubeVersion: ^1.20.0-0
+maintainers:
+- - email: jstrunk@redhat.com
+  name: John Strunk
+  url: https://github.com/JohnStrunk
+- - email: tflower@redhat.com
+  name: Tesshu Flower
+  url: https://github.com/tesshuflower
+name: volsync
+sources:
+- - https://github.com/backube/volsync
+type: application
+version: 0.17.0
+
+...
+files:
+  volsync-0.17.0.tgz: sha256:243b6a1d84361e01199537aa94d61fec2f421f46c18a4187fca79a3d111a9577
+-----BEGIN PGP SIGNATURE-----
+
+iQJPBAEBCAA5FiEELJN62s1L75IRl/Zu3HVWsZA6JSsFAmrY1C0bFIAAAAAABAAO
+bWFudTIsMi41KzEuMTIsMCwzAAoJENx1VrGQOiUry8sP/3lzjazcgT7tn/CK0KAS
+PhEdzNZAh8SZ1bd3UHwvI4QBFqDxSAY6C3eihSbBHN/LPRa+7OEJE5b6Ot8sgqCj
+uNDKd0n/SZ7YYDDVgiZI9Q9zWfBc2BI32sKHLjbp+ikjvoIZeLbH+EFMYe1rEp8d
+PExXFFjWfvImhCf+VD1ghm/ExhDnYRl/wVdgVJB2TOqS0oNETB/tLHDMZNjw1YWC
+NORw7k+feFMu6YXqiNq7IGHIo9gxZGDbRwmncXV5Gikt0/bT738gpMzHj7vlFUD6
+uQm39HhxiDHtLAKBBM9LWITEDWDNs5ExHu8+nkSLmPTWxeZV6xaRHHH5d0SlGtW6
+B0nhJDs7L31Hb0xd2WpD5CYfa3RBAd2WpwIPTwc7U0Hsy82OVxAAIiEYcnU3fOMK
+lNNEZchkJeHx3gj2a7XUsL0osoTadTg+mPWO0cO4/q2CvESWxCWl8av9wyeb2U7p
+e+jphSAXKa/ghQeG+NJQBTgQUvL/znqLE0QnyPFv/DGI/9av2AFG2dLq3/yYlfU/
++12XMfYT21+Yd6B3F9BlFkC+CSTf2csmRRlGMyWnGB8TKb50NpQ99s5WUcaw20/e
+aPHg5HMbd8a4yKge+Il30gRjMOxn0vJUVqFI+0TmY447NxrY2W4maYGtQHp+MSYA
+wi7IWpzQr43VCgEsVGzGtY8K
+=dI5/
+-----END PGP SIGNATURE-----
